@@ -1,6 +1,5 @@
 import { Stack } from '@chakra-ui/layout';
 import React from 'react';
-import { Link } from 'react-router-dom';
 import LinkItem from './LinkItem';
 
 const DesktopNavItems = (props) => {

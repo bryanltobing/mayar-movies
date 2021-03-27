@@ -1,3 +1,4 @@
+import { Container } from '@chakra-ui/layout';
 import TopBar from 'containers/TopBar/TopBar';
 import React, { useState } from 'react';
 
@@ -6,7 +7,9 @@ const Layout = ({ children }) => {
   return (
     <>
       <TopBar collapse={open} setCollapse={setOpen} />
-      {children}
+      <Container maxW="container.xl" marginY={[8, 12]}>
+        {children}
+      </Container>
     </>
   );
 };

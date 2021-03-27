@@ -1,16 +1,13 @@
-import { Stack, Text } from '@chakra-ui/layout';
+import { Stack } from '@chakra-ui/layout';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LinkItem from './LinkItem';
 
 const DesktopNavItems = (props) => {
   return (
     <Stack {...props}>
-      <Link to="/movies">
-        <Text>Movies</Text>
-      </Link>
-      <Link to="/actor">
-        <Text>Actor</Text>
-      </Link>
+      <LinkItem text="Movies" path="/movies" />
+      <LinkItem text="Actor" path="/actor" />
     </Stack>
   );
 };

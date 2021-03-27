@@ -8,6 +8,12 @@ const theme = extendTheme({
   fontSizes: {
     Title: '28px',
     TitleMobile: '20px',
+    SubTitle: '24px',
+    SubTitleMobile: '16px',
+    TextContent: '16px',
+    TextContentMobile: '12px',
+    Small: '14px',
+    SmallMobile: '10px',
   },
 });
 

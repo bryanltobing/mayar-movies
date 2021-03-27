@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 const DesktopNavItems = (props) => {
   return (
     <Stack {...props}>
-      <Link>
+      <Link to="/movies">
         <Text>Movies</Text>
       </Link>
-      <Link>
+      <Link to="/actor">
         <Text>Actor</Text>
       </Link>
     </Stack>

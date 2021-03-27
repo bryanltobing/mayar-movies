@@ -1,4 +1,4 @@
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import loadable from '@loadable/component';
 import Layout from 'containers/Layout/Layout';
 
@@ -8,8 +8,9 @@ const Routes = () => {
   return (
     <>
       <Switch>
+        <Redirect from="/" to="/movies" exact />
         <Layout>
-          <Route path="/" component={HomePagesLoad} />
+          <Route path="/movies" component={HomePagesLoad} exact />
         </Layout>
       </Switch>
     </>

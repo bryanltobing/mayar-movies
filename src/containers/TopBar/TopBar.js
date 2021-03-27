@@ -5,6 +5,7 @@ import { Collapse } from '@chakra-ui/transition';
 import DesktopNavItems from 'components/TopBar/DesktopNavItems';
 import MobileNavItems from 'components/TopBar/MobileNavItems';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const TopBar = ({ collapse, setCollapse }) => {
   const handleToggle = () => {
@@ -26,9 +27,11 @@ const TopBar = ({ collapse, setCollapse }) => {
           paddingX={paddingXValue}
           justifyContent="space-between"
         >
-          <Heading color="teal.50" fontSize={['TitleMobile', 'Title']}>
-            Mayar Movies
-          </Heading>
+          <Link to="/">
+            <Heading color="teal.50" fontSize={['TitleMobile', 'Title']}>
+              Mayar Movies
+            </Heading>
+          </Link>
 
           <DesktopNavItems
             direction="row"
@@ -47,7 +50,7 @@ const TopBar = ({ collapse, setCollapse }) => {
           />
         </Flex>
       </Box>
-      <Collapse in={collapse} animateOpacity>
+      <Collapse in={collapse} animateOpacity={false}>
         <MobileNavItems
           p={paddingXValue}
           color="teal.50"

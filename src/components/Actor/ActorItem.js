@@ -2,7 +2,6 @@ import {
   Box,
   Divider,
   Heading,
-  ListItem,
   Stack,
   Text,
   UnorderedList,
@@ -10,6 +9,7 @@ import {
 import { Collapse } from '@chakra-ui/transition';
 import React from 'react';
 import { useState } from 'react';
+import ActorMovieList from './ActorMovieList';
 
 const ActorItem = ({ theData: data }) => {
   const [showMovies, setShowMovies] = useState(false);
@@ -46,7 +46,7 @@ const ActorItem = ({ theData: data }) => {
         <Box marginX={1}>
           <UnorderedList>
             {data?.movies?.map(({ id, name }) => (
-              <ListItem key={id}>{name}</ListItem>
+              <ActorMovieList key={id} name={name} movieId={id} />
             ))}
           </UnorderedList>
         </Box>

@@ -100,13 +100,11 @@ const MovieItem = ({ theData: data }) => {
         </Collapse>
       </Box>
 
-      {showActorInfo && (
-        <ActorModal
-          isOpen={showActorInfo}
-          onClose={handleCloseActorInfo}
-          actorId={data?.actor?.id}
-        />
-      )}
+      <ActorModal
+        isOpen={showActorInfo}
+        onClose={handleCloseActorInfo}
+        actorId={data?.actor?.id}
+      />
     </>
   );
 };

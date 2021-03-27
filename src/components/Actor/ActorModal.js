@@ -16,12 +16,23 @@ const ActorModal = ({ onClose, isOpen, actorId }) => {
     <Modal onClose={onClose} isOpen={isOpen} isCentered>
       <ModalOverlay />
       <ModalContent margin={4} borderRadius="none">
-        <ModalHeader>Actor</ModalHeader>
-        <ModalCloseButton borderRadius="none" />
+        <ModalHeader>ACTOR</ModalHeader>
+        <ModalCloseButton
+          borderRadius="none"
+          backgroundColor="teal.700"
+          color="teal.50"
+          _hover={{ backgroundColor: 'teal.900' }}
+        />
         {isOpen && <ActorModalContent actorId={actorId} />}
 
         <ModalFooter>
-          <Button onClick={onClose} borderRadius="none">
+          <Button
+            onClick={onClose}
+            borderRadius="none"
+            backgroundColor="teal.700"
+            color="teal.50"
+            _hover={{ backgroundColor: 'teal.900' }}
+          >
             Close
           </Button>
         </ModalFooter>

@@ -4,18 +4,24 @@ import Layout from 'containers/Layout/Layout';
 
 const HomePagesLoad = loadable(() => import('pages/Home/HomePages'));
 const ActorPagesLoad = loadable(() => import('pages/Actor/ActorPages'));
+const Pages404Load = loadable(() => import('pages/404/404'));
 
 const Routes = () => {
   return (
-    <>
+    <Layout>
       <Switch>
-        <Redirect from="/" to="/movies" exact />
-        <Layout>
-          <Route path="/movies" component={HomePagesLoad} exact />
-          <Route path="/actor" component={ActorPagesLoad} exact />
-        </Layout>
+        <Route
+          path="/"
+          component={({ component: Component, ...rest }) => (
+            <Route {...rest} render={() => <Redirect to="/movies" />} />
+          )}
+          exact
+        />
+        <Route path="/movies" component={HomePagesLoad} exact />
+        <Route path="/actor" component={ActorPagesLoad} exact />
+        <Route component={Pages404Load} />
       </Switch>
-    </>
+    </Layout>
   );
 };
 

@@ -2,6 +2,7 @@ import { Button } from '@chakra-ui/button';
 import { Box, Heading, Stack, Text } from '@chakra-ui/layout';
 import React from 'react';
 import { useHistory } from 'react-router';
+import { fontSize } from 'token/Token';
 
 const Pages404 = () => {
   const history = useHistory();
@@ -16,7 +17,7 @@ const Pages404 = () => {
         <Heading fontSize={[80, 120]} color="gray.300" marginY={4}>
           404
         </Heading>
-        <Text fontSize={['SubTitleMobile', 'SubTitle']} fontWeight="bold">
+        <Text fontSize={fontSize.SubTitle} fontWeight="bold">
           YOU LOST
         </Text>
         <Button

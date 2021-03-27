@@ -3,6 +3,7 @@ import { Tooltip } from '@chakra-ui/tooltip';
 import { Collapse } from '@chakra-ui/transition';
 import ActorModal from 'components/Actor/ActorModal';
 import React, { useState } from 'react';
+import { fontSize } from 'token/Token';
 
 const MovieItem = ({ theData: data }) => {
   const [showActor, setShowActor] = useState(false);
@@ -28,15 +29,11 @@ const MovieItem = ({ theData: data }) => {
     <>
       <Box bg="teal.700" height="fit-content" boxShadow="xl" padding={4}>
         <Flex justifyContent="space-between" alignItems="center">
-          <Heading
-            color="teal.50"
-            fontSize={['SubTitleMobile', 'SubTitle']}
-            marginY={2}
-          >
+          <Heading color="teal.50" fontSize={fontSize.SubTitle} marginY={2}>
             {data?.name}
           </Heading>
           <Text
-            fontSize={['TextContentMobile', 'TextContent']}
+            fontSize={fontSize.TextContent}
             backgroundColor="teal.50"
             width="fit-content"
             height="fit-content"
@@ -52,7 +49,7 @@ const MovieItem = ({ theData: data }) => {
           cursor="pointer"
           fontStyle="italic"
           textDecor="underline"
-          fontSize={['TextContentMobile', 'TextContent']}
+          fontSize={fontSize.TextContent}
           color="teal.50"
           transition="ease"
           transitionDuration="0.5s"
@@ -72,7 +69,7 @@ const MovieItem = ({ theData: data }) => {
             paddingY={1}
           >
             <Heading
-              fontSize={['TextContentMobile', 'TextContent']}
+              fontSize={fontSize.TextContent}
               marginBottom={1}
               width="fit-content"
               transition="ease"
@@ -93,9 +90,7 @@ const MovieItem = ({ theData: data }) => {
                 {data?.actor?.name}
               </Tooltip>
             </Heading>
-            <Text fontSize={['SmallMobile', 'Small']}>
-              {data?.actor?.age} years old
-            </Text>
+            <Text fontSize={fontSize.Small}>{data?.actor?.age} years old</Text>
           </Box>
         </Collapse>
       </Box>

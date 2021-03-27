@@ -1,7 +1,7 @@
 import { gql, useQuery } from '@apollo/client';
-import { Center, SimpleGrid } from '@chakra-ui/layout';
-import { Spinner } from '@chakra-ui/spinner';
+import { SimpleGrid } from '@chakra-ui/layout';
 import ActorItem from 'components/Actor/ActorItem';
+import CenterLoadingSpinner from 'components/UI/CenterLoadingSpinner';
 import React from 'react';
 
 const Actor = () => {
@@ -21,17 +21,7 @@ const Actor = () => {
   const { data, loading } = useQuery(query);
   return (
     <>
-      {loading && (
-        <Center>
-          <Spinner
-            thickness="4px"
-            speed="0.65s"
-            emptyColor="teal.50"
-            color="teal.700"
-            size="xl"
-          />
-        </Center>
-      )}
+      {loading && <CenterLoadingSpinner />}
 
       {data && (
         <SimpleGrid minChildWidth="240px" spacing="20px">

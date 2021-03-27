@@ -1,11 +1,11 @@
 import { gql, useQuery } from '@apollo/client';
-import { Center, Divider, Heading, Text } from '@chakra-ui/layout';
+import { Divider, Heading, Text } from '@chakra-ui/layout';
 import { ModalBody } from '@chakra-ui/modal';
-import { Spinner } from '@chakra-ui/spinner';
+import CenterLoadingSpinner from 'components/UI/CenterLoadingSpinner';
 import React from 'react';
+import { fontSize } from 'token/Token';
 
 const MovieModalContent = ({ movieId }) => {
-  console.log(movieId);
   const query = gql`
     query {
       movie(id: "${movieId}") {
@@ -19,20 +19,10 @@ const MovieModalContent = ({ movieId }) => {
 
   return (
     <>
-      {loading && (
-        <Center>
-          <Spinner
-            thickness="4px"
-            speed="0.65s"
-            emptyColor="teal.50"
-            color="teal.700"
-            size="xl"
-          />
-        </Center>
-      )}
+      {loading && <CenterLoadingSpinner />}
       {data && (
         <ModalBody>
-          <Heading fontSize={['SubTitleMobile', 'SubTitle']} my={2}>
+          <Heading fontSize={fontSize.SubTitle} my={2}>
             {data?.movie?.name}
           </Heading>
           <Divider marginY={1} />
@@ -43,7 +33,7 @@ const MovieModalContent = ({ movieId }) => {
             borderColor="teal.700"
             color="teal.700"
             width="fit-content"
-            fontSize={['TextContentMobile', 'TextContent']}
+            fontSize={fontSize.TextContent}
           >
             {data?.movie?.genre}
           </Text>

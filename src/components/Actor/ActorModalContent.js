@@ -1,7 +1,6 @@
 import { gql, useQuery } from '@apollo/client';
 import {
   Box,
-  Center,
   Divider,
   Heading,
   ListItem,
@@ -9,8 +8,9 @@ import {
   UnorderedList,
 } from '@chakra-ui/layout';
 import { ModalBody } from '@chakra-ui/modal';
-import { Spinner } from '@chakra-ui/spinner';
+import CenterLoadingSpinner from 'components/UI/CenterLoadingSpinner';
 import React from 'react';
+import { fontSize } from 'token/Token';
 
 const ActorModalContent = ({ actorId }) => {
   const query = gql`
@@ -29,31 +29,21 @@ const ActorModalContent = ({ actorId }) => {
   const { data, loading } = useQuery(query);
   return (
     <>
-      {loading && (
-        <Center>
-          <Spinner
-            thickness="4px"
-            speed="0.65s"
-            emptyColor="teal.50"
-            color="teal.700"
-            size="xl"
-          />
-        </Center>
-      )}
+      {loading && <CenterLoadingSpinner />}
 
       {data && (
         <ModalBody>
           <Box>
-            <Heading fontSize={['SubTitleMobile', 'SubTitle']} my={2}>
+            <Heading fontSize={fontSize.SubTitle} my={2}>
               {data?.actor?.name}
             </Heading>
-            <Text fontSize={['TextContentMobile', 'TextContent']}>
+            <Text fontSize={fontSize.TextContent}>
               {data?.actor?.age} years old
             </Text>
           </Box>
 
           <Divider marginY={2} />
-          <Box fontSize={['SmallMobile', 'Small']}>
+          <Box fontSize={fontSize.Small}>
             <Heading fontSize="inherit">MOVIES</Heading>
             <Box marginX={1}>
               <UnorderedList>

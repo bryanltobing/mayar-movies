@@ -6,6 +6,7 @@ import DesktopNavItems from 'components/TopBar/DesktopNavItems';
 import MobileNavItems from 'components/TopBar/MobileNavItems';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { fontSize } from 'token/Token';
 
 const TopBar = ({ collapse, setCollapse }) => {
   const handleToggle = () => {
@@ -28,7 +29,7 @@ const TopBar = ({ collapse, setCollapse }) => {
           justifyContent="space-between"
         >
           <Link to="/">
-            <Heading color="teal.50" fontSize={['TitleMobile', 'Title']}>
+            <Heading color="teal.50" fontSize={fontSize.Title}>
               Mayar Movies
             </Heading>
           </Link>

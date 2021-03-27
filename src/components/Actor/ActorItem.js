@@ -9,6 +9,7 @@ import {
 import { Collapse } from '@chakra-ui/transition';
 import React from 'react';
 import { useState } from 'react';
+import { fontSize } from 'token/Token';
 import ActorMovieList from './ActorMovieList';
 
 const ActorItem = ({ theData: data }) => {
@@ -20,21 +21,21 @@ const ActorItem = ({ theData: data }) => {
 
   return (
     <Box
-      border="1px"
+      border="4px"
       borderColor="teal.700"
       padding={4}
       color="teal.900"
       height="fit-content"
     >
-      <Heading fontSize={['SubTitleMobile', 'SubTitle']}>Actor</Heading>
+      <Heading fontSize={fontSize.SubTitle}>Actor</Heading>
       <Divider marginY={2} />
-      <Stack spacing={0} fontSize={['TextContentMobile', 'TextContent']}>
+      <Stack spacing={0} fontSize={fontSize.TextContent}>
         <Text fontWeight="bold">{data?.name}</Text>
         <Text>{data?.age} years old</Text>
       </Stack>
       <Divider marginY={2} />
       <Heading
-        fontSize={['SubTitleMobile', 'SubTitle']}
+        fontSize={fontSize.SubTitle}
         _hover={{ color: 'teal.500' }}
         cursor="pointer"
         onClick={handleToggle}

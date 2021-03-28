@@ -11,6 +11,7 @@ Other libs
 - [Chakra UI] - For website styling
 - [React Router] - For website navigation
 - [React Icons] - For custom icon
+- [Apollo Client] - For Data Fetching
 
 ### Installation and run locally
 
@@ -25,3 +26,4 @@ $ yarn start
 [chakra ui]: https://chakra-ui.com/
 [react router]: https://reactrouter.com/
 [react icons]: https://react-icons.github.io/react-icons/
+[apollo client]: https://www.apollographql.com/docs/react/

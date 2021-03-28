@@ -21,6 +21,7 @@ const ActorMovieList = ({ name, movieId }) => {
         onClick={handleOpenMovieModal}
         cursor="pointer"
         _hover={{ color: 'teal.500' }}
+        textDecoration="underline"
       >
         <Tooltip label={name} aria-label={name}>
           {name}

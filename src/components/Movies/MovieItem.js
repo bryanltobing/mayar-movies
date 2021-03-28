@@ -76,10 +76,12 @@ const MovieItem = ({ theData: data }) => {
                 transition="ease"
                 transitionDuration="0.5s"
                 transitionProperty="all"
+                backgroundColor="teal.200"
+                padding={1}
+                cursor="pointer"
+                textDecoration="underline"
                 _hover={{
-                  backgroundColor: 'teal.200',
-                  padding: 1,
-                  cursor: 'pointer',
+                  backgroundColor: 'teal.400',
                 }}
                 onClick={handleShowActorInfo}
               >

@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <TopBar collapse={open} setCollapse={setOpen} />
-      <Container maxW="container.xl" marginY={[8, 12]}>
+      <Container maxW="container.xl" marginY={[5, 10]}>
         {children}
       </Container>
     </>

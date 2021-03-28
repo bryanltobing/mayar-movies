@@ -58,6 +58,7 @@ const TopBar = ({ collapse, setCollapse }) => {
           bg="teal.700"
           shadow="md"
           display={displayMobileValue}
+          setCollapse={setCollapse}
         />
       </Collapse>
     </>

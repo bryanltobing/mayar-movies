@@ -6,10 +6,10 @@ const MobileNavItem = (props) => {
   return (
     <Box {...props}>
       <List spacing={4}>
-        <ListItem cursor="pointer">
+        <ListItem cursor="pointer" onClick={() => props.setCollapse(false)}>
           <LinkItem text="Movies" path="/movies" />
         </ListItem>
-        <ListItem cursor="pointer">
+        <ListItem cursor="pointer" onClick={() => props.setCollapse(false)}>
           <LinkItem text="Actor" path="/actor" />
         </ListItem>
       </List>

@@ -2,14 +2,14 @@ import { Box, List, ListItem } from '@chakra-ui/layout';
 import React from 'react';
 import LinkItem from './LinkItem';
 
-const MobileNavItem = (props) => {
+const MobileNavItem = ({ handleCollapse, ...rest }) => {
   return (
-    <Box {...props}>
+    <Box {...rest}>
       <List spacing={4}>
-        <ListItem cursor="pointer" onClick={() => props.setCollapse(false)}>
+        <ListItem cursor="pointer" onClick={() => handleCollapse(false)}>
           <LinkItem text="Movies" path="/movies" />
         </ListItem>
-        <ListItem cursor="pointer" onClick={() => props.setCollapse(false)}>
+        <ListItem cursor="pointer" onClick={() => handleCollapse(false)}>
           <LinkItem text="Actor" path="/actor" />
         </ListItem>
       </List>

@@ -3,6 +3,7 @@ import { useQuery, gql } from '@apollo/client';
 import { SimpleGrid } from '@chakra-ui/layout';
 import MovieItem from 'components/Movies/MovieItem';
 import CenterLoadingSpinner from 'components/UI/CenterLoadingSpinner';
+import { catchError } from 'utils/catch';
 
 const Movies = () => {
   const query = gql`
@@ -19,7 +20,10 @@ const Movies = () => {
       }
     }
   `;
-  const { loading, data } = useQuery(query);
+  const { loading, data } = useQuery(query, {
+    onError: (err) => catchError(err.networkError.statusCode),
+  });
+
   return (
     <>
       {loading && <CenterLoadingSpinner />}

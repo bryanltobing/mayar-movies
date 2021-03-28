@@ -11,6 +11,7 @@ import { ModalBody } from '@chakra-ui/modal';
 import CenterLoadingSpinner from 'components/UI/CenterLoadingSpinner';
 import React from 'react';
 import { fontSize } from 'token/Token';
+import { catchError } from 'utils/catch';
 
 const ActorModalContent = ({ actorId }) => {
   const query = gql`
@@ -26,7 +27,12 @@ const ActorModalContent = ({ actorId }) => {
       }
     }
   `;
-  const { data, loading } = useQuery(query);
+  const { data, loading } = useQuery(query, {
+    onError: (err) => {
+      catchError(err.networkError.statusCode);
+    },
+  });
+
   return (
     <>
       {loading && <CenterLoadingSpinner />}
